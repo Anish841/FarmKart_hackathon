@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+		
+	<package name="default" extends="struts-default">
+		 <action name="cropPostAction" class="org.farmkart.farmer.FarmerStrut"
+			method="cropPostAction">
+			<result name="success">postcropdetail.jsp</result>
+			<result name="error">postcropdetail.jsp</result>
+		</action> 
+		
+		<action name="buycrop"  class="org.farmkart.buyer.BuyCrop">
+		  	<result name="success">/jsp/buyer/showcropdetails.jsp</result>		  		
+		  </action>		 
+		  		 
+		  <action name="requestcrop"  class="org.farmkart.buyer.RequestCrop">
+		  	<result name="success">/jsp/buyer/buycrophome.jsp</result>		  		
+		  </action>
+		 
+		<action name="loginAction" class="org.farmkart.farmer.LoginAction"
+			method="execute">
+			<result name="success">postcropdetail.jsp</result>
+			<!-- <result name="error">postcropdetail.jsp</result> -->
+		</action> 
+		 
+	</package>
+</struts>

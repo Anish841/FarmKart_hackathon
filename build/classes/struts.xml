@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+
+	
+	<package name="default" namespace="/" extends="json-default">
+	 <action name="checkExpectedPrice" class="org.farmkart.farmer.FarmerStrut" method="checkExpectedPrice">
+				<result type="json" name="success" />
+		</action>
+			<action name="cropPostAction" class="org.farmkart.farmer.FarmerStrut"
+			method="cropPostAction">
+			<result name="success">postcropdetail.jsp</result>
+			<result name="error">postcropdetail.jsp</result>
+		</action>
+		
+		<action name="buycrop"  class="org.farmkart.buyer.BuyCrop">
+		  	<result name="success">/jsp/buyer/showcropdetails.jsp</result>		  		
+		  </action>		 
+		  		 
+		  <action name="requestcrop"  class="org.farmkart.buyer.RequestCrop">
+		  	<result name="success">/jsp/buyer/buycrophome.jsp</result>		  		
+		  </action>
+		
+		<!-- <interceptors>
+			<interceptor name="authenticateInterceptor"	class="org.iiitb.ebooks.util.AuthenticateInterceptor"></interceptor>
+			<interceptor-stack name="secureAccess">
+				<interceptor-ref name="authenticateInterceptor" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors> -->
+
+		<!-- <action name="login" class="org.iiitb.ebooks.login.LoginAction" method ="execute">
+	      </action>	      
+		  
+		   <action name="getchunkdetails"  class="org.iiitb.ebooks.publisher.chunk.GetChunkDetails">
+		  		<result name="displaychunks">/jsp/publisher/chunk/chunkdetails.jsp</result>
+		  </action>	 -->	 
+	</package>
+</struts>
